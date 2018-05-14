@@ -1,0 +1,30 @@
+/* General Rules*/
+body {
+    background-color: #F9F9F7;
+    font-family: 'proxima-nova', 'Raleway', Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h4 {margin: 0.5em;}
+
+
+/* Bootstrap converted Rules*/
+.text-muted{
+    font-style: italic;
+    font-size: 0.7em;
+}
+
+
+/* New Bootstrap Classes*/
+.input-str-title {
+    margin-bottom: 4px;
+}
+
+
+/* MEDIA QUERIES*/
+@media screen and (max-width: 767px) {
+    .card{
+        margin-top: 15px;
+    }
+}
