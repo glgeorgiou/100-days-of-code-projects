@@ -13,4 +13,10 @@
 	<h1><?php bloginfo('title') ?></h1>
 </div>
 
-<div id='site-content'>
+<!-- Site menu -->
+<div id="header-menu">
+	<?php wp_nav_menu( array( "theme_location" => 'header-menu' ) ) ?>
+</div>
+
+<div id='site-container'>
+	<div id='site-content'>

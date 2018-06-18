@@ -33,17 +33,53 @@ html {
 
 
 #site-content {
-	max-width:625px;
+	max-width:680px;
 	background: #fff;
 	margin: 0 auto;
 	padding: 22px;
+	float:left;
 	border-radius:5px;
 }
 
+#site-sidebar {
+	width: 270px;
+	border: 7px solid white;
+	border-radius: 5px;
+	background: white;
+	float: right;
+}
+
+#site-sidebar li {list-style: none;}
 
 #site-footer {
 	color: #fff;
 	text-align:center;
 	font-size:12px;
 	text-transform: uppercase;
+	clear: both;
+}
+
+/*
+* Menu Styles
+*/
+#header-menu {
+	text-align:center;
+}
+
+#header-menu ul {
+	padding:0px;
+}
+
+#header-menu li {
+	display:inline-block;
+	padding: 0 8px;
+}
+
+#header-menu a {
+	color: #ccc;
+	text-decoration: none;
+}
+
+#header-menu a:hover {
+	color: #fff;
 }
