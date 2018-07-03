@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Colors</title>
+    <style>
+            body {-color: #FFFFFF;}
+            
+            /*Complementary colors*/
+            .blue {background-color: #0000ff; }
+            .yellow {background-color: #ffff00;}
+
+            div {
+              display: inline-block;
+              height: 100px;
+              width: 100px;
+            }
+
+            /*Tertiary colors*/
+            .orange {background-color: #FF7D00;}
+            .cyan {background-color: #00FFFF;}
+            .raspberry {background-color: #FF007D;}
+
+            /*Rules for the navigation*/
+            header {
+                background-color: hsl(180, 90%, 35%);
+                color: #FFFFFF;
+            }
+            
+            nav {background-color: hsl(180, 80%, 25%);}
+            
+            h1 {
+                text-indent: 10px;
+                padding-top: 10px;
+            }
+            
+            nav ul {
+                margin: 0px;
+                padding: 5px 0px 5px 30px;
+            }
+            
+            nav li {
+                display: inline;
+                margin-right: 20px;
+            }
+            
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            /*Gradient colors*/
+            .mydiv {
+                border-radius: 20px;
+                width: 70%;
+                height: 400px;
+                margin: 50px auto;
+                background: linear-gradient(35deg, #ccffff, #ffcccc);
+            }   
+            .mydiv2 {
+                border-radius: 20px;
+                width: 70%;
+                height: 400px;
+                margin: 50px auto;
+                background: repeating-linear-gradient(
+                    45deg,
+                    yellow 0px,
+                    yellow 40px,
+                    black 40px,
+                    black 80px
+                    );
+            }   
+          </style>
+</head>
+<body>
+        <h2>Complementary colors</h2>
+        <div class="blue"></div>
+        <div class="yellow"></div>
+
+        <h2>Tertriary colors</h2>
+        <div class="orange"></div>
+        <div class="cyan"></div>
+        <div class="raspberry"></div>
+
+        <header>
+            <h1>Tone of cyan color</h1>
+            <nav>
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">Classes</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <h1>Linear Gradient colors</h1>
+        <div class="mydiv"></div>
+        <h2>Repeating Linear Gradient colors</h2>
+        <div class="mydiv2"></div>
+</body>
+</html>
