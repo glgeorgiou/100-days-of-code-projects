@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Transform Property</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .ball { 
+            width: 40px;
+            height: 40px;
+            margin: auto;
+            position: fixed;
+            background: linear-gradient(
+                35deg,
+                #ccffff,
+                #ffcccc
+                );
+             border-radius: 50%;
+        }
+        #ball1 {
+            left: 20%;
+        }
+        #ball1:hover {
+            transform: scale(1.5);
+        }
+        #ball2 {
+            left: 65%;
+            transform: scale(1.5);
+        }
+
+        /*Trasnform: skew*/
+        div { 
+            width: 70%;
+            height: 100px;
+            margin:  50px auto;
+        }
+        #top {
+            background-color: red;
+            transform: skewY(-10deg)
+        }
+        #bottom {
+            background-color: blue;
+            transform: skewX(24deg);
+        }
+
+    </style>
+</head>
+<body>
+        <h2>Scale balls</h2>
+        <div class="ball" id= "ball1"></div>
+        <div class="ball" id= "ball2"></div>
+        
+        <hr>
+        <h2>SkewX</h2>
+        <div id="top"></div>
+        <div id="bottom"></div>
+</body>
+</html>
