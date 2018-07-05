@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Animationn and Keyframes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /*# colors in box*/
+        div {
+          height: 40px;
+          width: 70%;
+          background: black;
+          margin: 50px auto;
+          border-radius: 5px;
+          position: relative; /*relative position for top, left properties*/
+        }
+      
+        #rect {
+          animation-name: rainbow; /*Animation name for usage on keyframes*/
+          animation-duration: 4s;
+        }
+        
+        @keyframes rainbow {
+            0% {
+                background-color: blue;
+                top: 0px;
+                left:0px;
+            }
+            50% {
+                background-color: green;
+                top: 50px;
+                left: 25px;
+            }
+            100% {
+                background-color: yellow;
+                top: 0px;
+                left: -25px;
+            }
+        }  
+
+        /*Hover button animated color*/
+        button {
+            border-radius: 5px;
+            color: white;
+            background-color: #0F5897;
+            padding: 5px 10px 8px 10px;
+        }
+        
+        button:hover {
+            animation-name: background-color;
+            animation-duration: 500ms; /*ms = milliseconds*/
+            animation-fill-mode: forwards; /*Keep the animation from last keyframe*/
+        }
+        @keyframes background-color {
+            100% {
+            background-color: #4791d0;
+            }
+        }
+
+        /*Moving ball opacity*/
+        #ball {
+            width: 70px;
+            height: 70px;
+            margin: 50px auto;
+            position: fixed;
+            left: 20%;
+            border-radius: 50%;
+            background: linear-gradient(
+            35deg,
+            #ccffff,
+            #ffcccc
+            );
+            animation-name: fade;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+        }
+
+        @keyframes fade {
+            50% {
+            left: 60%;
+            opacity: 0.1; 
+            }
+        }
+      </style>
+</head>
+<body>
+    <div id="rect"></div>
+
+    <h2>Animation on hover</h2>
+    <button>Register</button>
+
+    <h2>Animated ball</h2>
+    <div id="ball"></div>
+</body>
+</html>
