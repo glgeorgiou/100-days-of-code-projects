@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Animation Timing Function Values</title>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+
+        <style>
+            .title-row{
+                min-width: 450px;
+            }
+            .balls {
+                border-radius: 50%;
+                position: fixed;  
+                width: 48px;
+                height: 48px;
+                top: 60%;
+                animation-name: jump;
+                animation-duration: 4s;
+                animation-iteration-count: infinite;
+            }
+            #ease {
+                background: blue;
+                left: 0%;
+                animation-timing-function: ease;
+            }
+            #ease-in {
+                background: blue;
+                left: 14%;
+                animation-timing-function: ease-in;
+            }
+            #ease-out {
+                background: blue;
+                left: 28%;
+                animation-timing-function: ease-out;
+            }
+            #ease-in-out {
+                background: blue;
+                left: 42%;
+                animation-timing-function: ease-in-out;
+            }
+            #linear {
+                background: blue;
+                left: 56%;
+                animation-timing-function: linear;
+            }
+            #step-start {
+                background: green;
+                left: 70%;
+                animation-timing-function: step-start;
+            }
+            #step-end {
+                background: red;
+                left: 84%;
+                animation-timing-function: step-end;
+            }
+            @keyframes jump {
+                50% {
+                top: 15%;
+                }
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <div class="row col-sm-12">
+                <h4>Animation Timing Function Values</h4>
+            </div>
+            <div class="row title-row">
+                    <div class="col">Ease</div>
+                    <div class="col">Ease<br />in</div>
+                    <div class="col">Ease<br />out</div>
+                    <div class="col">Ease<br />in out</div>
+                    <div class="col">Linear</div>
+                    <div class="col">Step<br />start</div>
+                    <div class="col">Step<br />end</div>
+            </div>
+        </div>
+
+        <div class="balls" id="ease"></div>
+        <div class="balls" id="ease-in"></div>
+        <div class="balls" id="ease-out"></div>
+        <div class="balls" id="ease-in-out"></div>
+        <div class="balls" id="linear"></div>
+        <div class="balls" id="step-start"></div>
+        <div class="balls" id="step-end"></div>
+
+         <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    </body>
+
+</html>
