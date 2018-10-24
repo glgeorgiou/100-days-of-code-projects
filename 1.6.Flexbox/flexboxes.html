@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FlexBox Test</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+    <style>
+        #box-container {
+            background: gray;
+        height: 500px;
+        display:flex; /*Boxes side by side*/
+        flex-direction: row-reverse; /*Reverse boxes direction horizontally*/
+        /*flex-direction: column; /*column direction*/
+        justify-content: center;
+        }
+        
+        #box-1 {
+        background-color: dodgerblue;
+       /* width: 50%;/*Use without justify*/
+       width: 25%;
+        height: 50%;
+        }
+    
+        #box-2 {
+        background-color: orangered;
+        /* width: 50%;/*Use without justify*/
+        width: 25%;
+        height: 50%;
+        
+        }
+    </style>
+<body>
+    <div id="box-container">
+        <div id="box-1">Box 1</div>
+        <div id="box-2">Box 2</div>
+      </div>
+</body>
+</html>
