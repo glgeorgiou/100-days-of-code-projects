@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!-- 
+https://devdocs.io/css/grid-template-rows
+https://devdocs.io/css/grid-template-columns
+When the container's size exceeds the size of all the items combined,  auto-fit collapses those empty rows or columns and stretches your items to fit the size of the container.
+-->
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Grid Template Rows Columns auto-fit</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .item1{background:LightSkyBlue;}
+        .item2{background:LightSalmon;}
+        .item3{background:PaleTurquoise;}
+        .item4{background:LightPink;}
+        .item5{background:PaleGreen;}
+        
+        .container {
+          font-size: 40px;
+          min-height: 100px;
+          width: 100%;
+          background: LightGray;
+          display: grid;
+          
+          grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+          
+          grid-template-rows: 1fr 1fr 1fr;
+          grid-gap: 10px;
+        }
+        
+        .container2 {
+          font-size: 40px;
+          min-height: 100px;
+          width: 100%;
+          background: Silver;
+          display: grid;
+          grid-template-columns: repeat(3, minmax(60px, 1fr));
+           /* change the code below this line */
+    
+          grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    
+            /* change the code above this line */
+          grid-template-rows: 1fr 1fr 1fr;
+          grid-gap: 10px;
+        }
+      </style>
+</head>
+<body>
+    <div class="container">
+            <div class="item1">Item no 1</div>
+            <div class="item2">Item no 2</div>
+            <div class="item3">Item no 3</div>
+            <div class="item4">Item no 4</div>
+            <div class="item5">Item no 5</div>
+      </div>
+    <div class="container2">
+            <div class="item1">Item no 1</div>
+            <div class="item2">Item no 2</div>
+            <div class="item3">Item no 3</div>
+            <div class="item4">Item no 4</div>
+            <div class="item5">Item no 5</div>
+      </div>
+</body>
+</html>

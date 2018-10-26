@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!-- 
+https://devdocs.io/css/grid-template-rows
+https://devdocs.io/css/grid-template-columns
+
+
+-->
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Grid Template Rows Columns Repeat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .item1{background:LightSkyBlue;}
+        .item2{background:LightSalmon;}
+        .item3{background:PaleTurquoise;}
+        .item4{background:LightPink;}
+        .item5{background:PaleGreen;}
+        
+        .container {
+          font-size: 40px;
+          min-height: 300px;
+          width: 100%;
+          background: LightGray;
+          display: grid;
+          /*Repeat 3 tiemes with width of 1fr*/
+          grid-template-columns: repeat(3, 1fr);
+          grid-template-rows: 1fr 1fr 1fr;
+          grid-gap: 10px;
+        }
+      </style>
+</head>
+<body>
+    <div class="container">
+            <div class="item1">Item no 1</div>
+            <div class="item2">Item no 2</div>
+            <div class="item3">Item no 3</div>
+            <div class="item4">Item no 4</div>
+            <div class="item5">Item no 5</div>
+      </div>
+</body>
+</html>
