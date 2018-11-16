@@ -10,14 +10,13 @@
 <body>
     
     <!-- Header-->
-    <div id="header">
-        <div class="" id="header-img">
-            <img src="https://png2.kisspng.com/sh/da07e8af1cc350f2c00b9b22bae3b509/L0KzQYm3VME5N6JniZH0aYP2gLBuTf12e5poed42a3X8crFokvQueJpmhtG2Y3zsgH7okwQueJpmhtG2Y3H1hLF2jr02aZU8eattMHTkQrTpVb40P2M4Sqg7NkG4QoW3WMMyPWM9UaUCLoDxd1==/kisspng-musical-keyboard-piano-clip-art-piano-cartoon-5ad7a9d0da2cb5.3723262615240831528937.png" alt="Piano logo" width="126px" height="100px">
-        </div>
+    <header id="header">
+        
+            <img  id="header-img" src="https://www.ggeorgiou.gr/wp-content/uploads/2018/06/logo-ggeorgiou-50X50.jpg" alt="Piano logo" width="126px" height="100px">
         <nav id="nav-bar">
             <ul>
                 <li>
-                    <a class="nav-link" href="#presentation">Product presentation</a>
+                    <a class="nav-link" href="#video-works">Product presentation</a>
                 </li>
                 <li>
                     <a class="nav-link" href="#features">Features</a>
@@ -27,71 +26,73 @@
                 </li>
             </ul>
         </nav>
-    </div>
+    </header>
     
+    <!-- CONTAINER-->
+   <div class="container">
+       <!-- Product presentation-->
+       <section id="video-works">
+           <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/Mn6UxJNOce8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       </section>
+       
     
-   
+       <!-- Features-->
+       <div id="features">
+           <div class="flex-grid">
+               <div class="desc">
+                   <h2>High quality materials</h2>
+                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec pretium auctor velit quis accumsan. </p>
+               </div>
+           </div>
     
-    <!-- Product presentation-->
-    <section id="presentation">
-        <h2>Yamaha MOXF 6</h2>
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/Mn6UxJNOce8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    </section>
+           <div class="flex-grid">
+               <div class="desc">
+                   <h2>Fash Shipping</h2>
+                   <p>Integer tempor accumsan hendrerit. Sed sed urna efficitur, feugiat quam quis, ultrices justo. Morbi varius vehicula sem, eget convallis mauris dignissim sit amet.</p>
+               </div>
+           </div>
+       
+           <div class="flex-grid">
+               <div class="desc">
+                   <h2>Quality Assurance</h2>
+                   <p>Phasellus ornare velit eu venenatis efficitur. Nunc libero mauris, vulputate ut libero ac, volutpat ultricies nulla.</p>
+               </div>
+           </div>
+       </div>
     
+       
+       <!-- Pricing-->
+       <section id="price">
+               <div class="p-price">
+                   <div>$942</div>
+               </div>
+               <div class="p-offer">
+                   <div>$759</div>
+               </div>
+       </section>
 
-    <!-- Features-->
-    <div id="features">
-        <div class="flex-grid">
-            <div class="icon"></div>
-            <div class="desc">
-                <h2>High quality materials</h2>
-                <p></p>
-            </div>
-        </div>
 
-        <div class="flex-grid">
-            <div class="icon"></div>
-            <div class="desc">
-                <h2>Fash Shipping</h2>
-                <p></p>
-            </div>
-        </div>
-    
-        <div class="flex-grid">
-            <div class="icon"></div>
-            <div class="desc">
-                <h2>Quality Assurance</h2>
-                <p></p>
-            </div>
-        </div>
-    </div>
-
-    
-    <!-- Pricing-->
-    <section id="price">
-        Price, offer
-    </section>
-
-
-    <!-- Mail List-->
-    <section id="hero">
-        <h2>Thursty to learn first our new products?</h2>
-        <form action="https://www.freecodecamp.com/email-submit" id="form">
-            <input type="email" id="email" placeholder="Enter your email">
-            <input type="submit" id="submit" value="Subcribe now!">
-        </form>
-    </section>
-
-    
+       <!-- Mail List-->
+       <section id="hero">
+           <h2>Thursty to learn first our new products?</h2>
+           <form action="https://www.freecodecamp.com/email-submit" id="form">
+               <input type="email" id="email" name="email" placeholder="Enter your email">
+               <input type="submit" id="submit" value="Subcribe now!">
+           </form>
+       </section>
+   </div><!-- END OF CONTAINER-->
+       
     <!--Footer -->
-    <ul>
-        <li>
-            <a href="#">Privacy</a>
-        </li>
-        <li>
-            <a href="#">Terms</a>
-        </li>
-    </ul>
-    <span>Copyright Text</span>
+    <footer>
+        <ul>
+            <li>
+                <a href="#">Privacy</a>
+            </li>
+            <li>
+                <a href="#">Terms</a>
+            </li>
+        </ul>
+        <span><I>Copyright ggeorgiou.gr</I></span>
+    </footer>
 </body>
 </html>
