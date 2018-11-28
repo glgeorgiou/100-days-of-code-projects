@@ -1,0 +1,45 @@
+html,body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    line-height: 1.5;
+    color: black;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 300px auto;
+    grid-template-rows: 1fr auto;
+    grid-gap: 15px;
+    grid-template-areas: "navigation main-content";
+}
+
+nav#navbar {
+    grid-area: navigation;
+}
+main#main-doc{
+    grid-area: main-content;
+}
+
+code{
+    display:block;
+    text-align: left;
+    white-space: pre;
+    word-break: normal;
+    word-wrap: normal;
+    line-height: 1.4;
+    background-color:#f7f7f7;
+    padding:5px;
+    margin:10px;
+    border-radius:5px;
+}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .container{
+        grid-template-areas: "navigation navigation" 
+                            "main-content main-content";
+
+    }
+}
