@@ -2,19 +2,73 @@ html,body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     line-height: 1.5;
     color: black;
+    background-color: #efefef;
 }
-
 .container {
     display: grid;
-    grid-template-columns: 300px auto;
-    grid-template-rows: 1fr auto;
+    grid-template-columns: auto;
+    grid-template-rows: 360px auto;
+    grid-template-areas: "navigation"
+                         "main-content";
     grid-gap: 15px;
-    grid-template-areas: "navigation main-content";
 }
+
+section {
+    background-color: #FDFDFD;
+    padding: 20px;
+    margin: 10px 0;
+}
+section img {
+    width: 100%;
+}
+header {
+    color: black;
+    font-size: 1.5em;
+}
+section article {
+    margin: 10px;
+    font-size: 1em;
+}
+section ul {
+    margin: 10px 0;
+}
+section ul li{
+    margin: 7px 0px;
+}
+
 
 nav#navbar {
     grid-area: navigation;
+    border-right: solid;
+    border-color: rgba(0,22,22,0.4);
+    background-color: #fdfdfd;
 }
+nav header {
+    margin: 10px;
+    text-align: center;
+    font-size: 1.7em;
+}
+nav ul {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+nav ul li {
+    color: #4d4e53;
+    border:1px solid;
+    border-bottom-width:0px;
+    padding:8px;
+    padding-left:45px;
+    list-style: none;
+    position:relative;
+    left:-50px;
+    width:100%;
+}
+nav a {
+    color: #4d4e53;
+    text-decoration:none;
+    cursor:pointer;
+}
+
 main#main-doc{
     grid-area: main-content;
 }
@@ -28,7 +82,7 @@ code{
     line-height: 1.4;
     background-color:#f7f7f7;
     padding:5px;
-    margin:10px;
+    margin:10px 0;
     border-radius:5px;
 }
 
@@ -36,10 +90,22 @@ code{
 
 
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
     .container{
-        grid-template-areas: "navigation navigation" 
-                            "main-content main-content";
-
+        grid-template-columns: 300px auto;
+        grid-template-rows: 100%;
+        grid-template-areas: "navigation main-content";
+    }
+    nav#navbar {
+        grid-area: navigation;
+        position: fixed;
+        min-width: 290px;
+        top: 0px;
+        left: 0px;
+        width: 300px;
+        height: 100%;
+        border-right: solid;
+        border-color: rgba(0,22,22,0.4);
+        background-color: #fdfdfd;
     }
 }

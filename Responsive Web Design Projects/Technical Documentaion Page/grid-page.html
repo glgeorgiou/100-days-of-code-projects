@@ -15,22 +15,23 @@
             <nav id="navbar">
                 <header>Introduction  to Python</header>
                 <!-- Source: http://pytolearn.csd.auth.gr/contents.html-->
-        
-                <a href="what_is_python" class="nav-link">What is Python</a>
-                <a href="#what_to_install" class="nav-link">What to install</a>
-                <a href="#language_execution_model" class="nav-link">Language execution model</a>
-                <a href="#namespaces_and_modules" class="nav-link">Namespaces and Modules</a>
-                <a href="#variables_and_dymanic_typing" class="nav-link">Variables and Dynamic Typing</a>
-                <a href="#where_do_types_come_from" class="nav-link">Where do types come from?</a>
-                <a href="#data_types_numerics" class="nav-link">Data Types: Numerics</a>
-                <a href="#data_types_strings" class="nav-link">Data Types: Strings</a>
-                <a href="#data_tupes_modules" class="nav-link">Data Types: 'random' and 'math' modules</a>
-                <a href="#data_types_booleans" class="nav-link">Data Types: Booleans</a>
-                <a href="#i_o_commands_print" class="nav-link">I/O Commands: Print</a>
-                <a href="#i_o_commands_input" class="nav-link">I/O Commands: Input</a>
-                <a href="#flow_control_while" class="nav-link">Flow Control: 'While' loop</a>
-                <a href="#flow_control_if" class="nav-link">Flow Control: 'if' control</a>
-                <a href="#flow_control_for" class="nav-link">Flow Control: 'for' loop</a>
+                
+                <ul>
+                    <a href="#what_is_python" class="nav-link">
+                        <li>What is Python</li></a>
+                    <a href="#what_to_install" class="nav-link">
+                        <li>What to install</li></a>
+                    <a href="#language_execution_model" class="nav-link">
+                        <li>Language execution model</li></a>
+                    <a href="#namespaces_and_modules" class="nav-link">
+                        <li>Namespaces and Modules</li></a>
+                    <a href="#variables_and_dymanic_typing" class="nav-link">
+                        <li>Variables and Dynamic Typing</li></a>
+                    <a href="#where_do_types_come_from" class="nav-link">
+                        <li>Where do types come from?</li></a>
+                    <a href="#reference" class="nav-link">
+                        <li>Reference</li></a>
+                </ul>
             </nav>
         
         
@@ -39,76 +40,290 @@
             <main id="main-doc">
                 <section class="main-section" id="what_is_python">
                     <header>What is Python</header>
-                    
+                    <article>
+                        <p>Python is a high-level general-purpose programming language</p>    
+                        <ul>
+                            <li>high-level: Python is a more abstract language compared to C. This adds expressiveness to Python and offers power to programmers to write more flexible and efficient code. The downsize might be that Python code is slower in occasions, but many optimization methods exist to deal with this issue.</li>
+                            <li>eneral-purpose: Python is not bound to any specific programming purpose (unlike R which is specifically 'statistics-oriented') nor programming paradigm (unlike Java which imposes object-oriented programming techniques). This feature makes Python a powerful tool for a variety of applications in various scientific domains and also in education. The interested developer will find numerous domain-specific packages to start writing specialized code for the domain of interest. The teacher has a versatile tool to advance students' computational thinking.</li>
+                            <li>
+                                <a href="#">Read Python docs: "What is Python? Executive Summary"</a>
+                            </li>
+                        </ul>
+                        <p>Python promotes code simplicity and readability</p>
+                        <p>Take a look at the 'Hello World' code in Python compared to two other popular languages.</p>
+                        <code>
+                            #### in C
+                                #include <stdio.h>
+                                int main()
+                                {
+                                  printf("Hello World\n");
+                                  return 0;
+                                } 
+                                
+                                
+                                #### in Java
+                                public class HelloWorld { 
+                                    public static void main(String[] args) { 
+                                        System.out.println("Hello, World!");
+                                     } 
+                                }
+                                
+                                #### in Python 3
+                                print('Hello World!')
+                            </code>
+                    </article>
                 </section>
         
+
                 <section class="main-section" id="what_to_install">
                     <header>What to install</header>
-        
+                    <p>
+                        <ul>
+                            <li>If you are new to Python then install the language and get familiar with the Integrated DeveLopment Environment (IDLE) :<blockquote><ul>
+                            <li>
+                                <a href="https://www.python.org/downloads/" target="_blank">Download and install</a> the latest version of Python for Windows, or
+                            </li>
+                            <li>
+                                Read the <a href="https://wiki.python.org/moin/BeginnersGuide/Download" target="_blank">Python wiki instructions</a> for various operating systems
+                            </li>
+                        </ul>
+                    </p>
+                    <p><img src="http://pytolearn.csd.auth.gr/p0-py/00/idle.png" alt="python ide"></p>
                 </section>
         
+
+
                 <section class="main-section" id="language_execution_model">
                     <header>Language execution model</header>
-        
+                    <h3>Python interpreter</h3>
+                    <ul>
+                        <li>Python is implemented mostly as an <strong>interpreted</strong>language, but part of the execution process is actually code <strong>compilation</strong>.</li>
+                        <li>Being interpreted means that the Python code you write is input to an interpreter program that executes the code as it reads it line after line (usually python source code is saved in .py files)</li>
+                            <ul>
+                                <li>This interpretation process is distictively different from compilation (in languages like C or Java) where the language compiler translates initially the code into compiled form (a form of code closer to what the machine 'understands').</li>
+                            </ul>
+                        <li>Pros/cons of interpreted implementation:</li>
+                            <ul>
+                                <li><i>Pros</i>: interpretation offers a more interactive learning experience to the beginner, as it immediately executes the code and provides feedback</li>
+                                <li><i>Cons</i>: interpretation tends to be slower in code execution since an interpreter reads (parses), interprets and executes source code 'from scratch' each time (no compiled form of code is created).</li>
+                            </ul>
+                    </ul>
+                    <h3>Bytecode and Python Virtual Machine (PVM)</h3>
+                    <ul>
+                        <li>Python, however, is not a simply interpreted language. Code execution is somehow more complicated.</li>
+                        <li>In essence, Python creates an intermediate translated form of code called 'bytecode'. This is platform independent code (usually in .pyc files) which is executed by a special form of Python program called <strong>"Python Virtual Machine" (PVM)</strong>
+                        </li>
+                        <li>Since executing bytecode is faster than executing source code from scratch Python tends to be faster than purely interpreted implementation.</li>
+                        <li>When working with Python the problem of interpreted-code slower execution is alleviated by at least two factors:</li>
+                        <ul>
+                            <li>(a) Contemporary hardware is fast enough to efficiently execute Python bytecode in many situations</li>
+                            <li>(b) In time critical situations there is always the possibility of "mixing" Python with faster executed compiled C code.</li>
+                        </ul>
+                    </ul>
+                    <p>Actually the basic Python you learn is itself written in C ('CPython' implementation), meaning that many of its modules call C compiled code routines, thus achieving C comparable execution times.</p>
+                    <p><img src="http://pytolearn.csd.auth.gr/p0-py/00/execmod.png" alt="PVM"></p>
                 </section>
         
+
+
                 <section class="main-section" id="namespaces_and_modules">
                     <header>Namespaces and Modules</header>
-        
+                    <h3>(a) Object reference</h3>
+                    <p>It is of paramount importance in learning Python to clearly understand what happens 'under the hood' when an assignment command is executed. So:</p>
+                    <p>
+                        <strong>What happens when 'x = 1' is executed?</strong>
+                    </p>
+                    <p>Three actions are taken:</p>
+                    <ul>
+                        <li>(a) <strong>a name 'x'</strong> (a simple sequence of characters, an identifier) is created somewhere in the system memory</li>
+                        <li>(b) <strong>an object</strong> (a specific data structure) with value '1' is created somewhere in memory</li>
+                        <li>(c) <strong>a binding</strong> between name x and object '1' is established (that is: a pointer is created directing from 'x' to '1')</li>
+                    </ul>
+                    <p>This binding is typically called 'object reference'</p>
+                    
+                    <h3>(b) Namespaces</h3>
+                    <p><strong>What is a namespace?</strong></p>
+                    <ul>
+                        <li> In Python a <strong>'namespace'</strong> is a mapping from names to their objects (values) in a specific programming context. For example, the mapping of names a, b, c, d in the example above on objects 1, 3 and 'spam' constructs a namespace./li>
+                        <li>A namespace can be also conceptualized as the 'ecosystem' where a name is born, lives and dies.</li>
+                        <li>A concrete example:</li>
+                            <ul>
+                                <li><strong>x = 1</strong> (a name is almost always created ('is born') by some assignment command)</li>
+                                <li><strong>x = 'spam'</strong> (other assignments may alter the name binding, that is its 'object reference')</li>
+                                <li><strong>del x</strong> (one way for a name to 'die' - that is, expelled from the namespace- is by using the 'del' command)</li>
+                            </ul>
+                     </ul>
+                    <code>
+                            1
+                            x='spam'
+                            print(x)
+                            
+                            del x
+                            print(x)
+                    </code>
+                    <p>You expect the value <i>spam</i> but:</p>
+                    <code>
+                            NameError                                 Traceback (most recent call last)
+                            <ipython-input-7-2bb509689422> in <module>()
+                                  4 
+                                  5 del x
+                            ----> 6 print(x)
+                            
+                            NameError: name 'x' is not defined
+                    </code>
+
+                    <h3>(C)Modules</h3>
+                    <p><strong>What is a module?</strong></p>
+                    <ul>
+                        <li>A module is practically any .py file containing useful code (for example: statements, functions, and classes) that can be used for code development.</li>
+                        <li>As the name implies, modules promote the idea of modular development in practice. Python offers a simple yet powerful way to link modules and use/reuse code in many different situations</li>
+                    </ul>
+                    <p><strong>How to connect modules</strong></p>
+                    <ul>
+                        <li>Modules are connected using the <strong>'import'</strong>  command</li>
+                        <li>Typically you write the import command in the beginning (not necessarily though) of your main program module, as follows
+                            <p>import module_name </p>
+                        </li>
+                        <li>
+                                The 'import' command imports the namespace of the module to the namespace of the code you are writing in your main program. For example:
+                        </li>
+                    </ul>
+                    <code>
+                        import random
+
+                            print(random.randint(1,10))
+                    </code>
                 </section>
         
                 <section class="main-section" id="variables_and_dymanic_typing">
                     <header>Variables and Dynamic Typing</header>
-        
+                    <h3>(a) Variables</h3>
+                    <p><strong>What exactly is then a variable in Python?</strong></p>
+                    <ul>
+                        <li><strong>Variables do not exist in Python</strong> - at least not in the way they exist in other languages ('static type' languages as explained further below)</li>
+                        <li>The property of variability in Python emerges while changing the namespace, that is, while changing the mapping (the binding, the object reference) of <strong>various names to various object-values</strong> during runtime.</li>
+                    </ul>
+                    <p><strong>Variabe name</strong></p>
+                    <ul>
+                        <li>
+                                For reasons of consistency with other programming environments and common understanding we retain the <strong>'variable'</strong> keyword and talk about <strong>'variable names'</strong>, referring to the character sequences that are acceptable as Python names.
+                        </li>
+                        <li>There are two simple rules for writing names:</li>
+                        <ul>
+                            <li>(a) Acceptable names consist of: (underscore or letter) + (any number of letters, digits or underscores)</li>
+                            <li>b) Names are case sensitive: 'spam' is different from 'Spam' and different from 'SPAM'</li>
+                        </ul>
+                    </ul>
+                    <p><strong>Assignment</strong></p>
+                    <ul>
+                        <li>Obviously assignment commands are of special importance in Python. The first time a name appears in an assignment command, Python integrates the name in the namespace and establishes a binding (setting a pointer) from the name to the referenced object.</li>
+                        <li>Assignments can be written in ways that allow multiple bindings of names and objects. See the examples below:</li>
+                    </ul>
+                    <code>
+                            # Assignment examples
+                            a = b = c = 0       # all names are bound to value object '0' 
+                            
+                            a, b = 1, 1.5       # a is bound to 1, b to 1.5 
+                            
+                            a, b, c = 'foo'     # equivalent to: a='f', b='o', c='o'
+                            
+                            a, b, c = (1,2,3)   # equivalent to: a=1, b=2, c=3
+                            
+                            a, b, *c = 'spam'   # equivalent to: a='s', b='p', c=['a','m']
+                            
+                            a, b = b, a         # swapping values 
+                    </code>
+
+                    <h3>(b) Dynamic typing</h3>
+                    <p>Python is a 'dynamically typed' language (or simply: 'dynamic' language) in contrast to other popular languages (C/C++, Java, etc.) which are 'statically typed' ('static') languages</p>
+                    <p><strong>What is 'dynamic typing'?</strong></p>
+                    <ul>
+                        <li>In Python (and in other dynamic languages) the type properties are not associated with the variable names but with the value object at the right place of an assignment.</li>
+                        <li>During runtime any specific name can be bound to objects of different type (integers, string, float, lists, etc.) and, as long as this binding is valid, the variable name 'carries' the type properties of the object it is associated with. This dynamic change of name type without demanding any specific 'declaration' of the variable-name type, gives to Python its dynamic typing character.</li>
+                        <li>See the example:</li>
+                        <code>
+                                x = 'Hello world!'
+                                print(type(x), len(x))
+                                
+                                x = 1
+                                print(type(x), len(x))
+                        </code>
+                    </ul>
                 </section>
         
+
+
                 <section class="main-section" id="where_do_types_come_from">
                     <header>Where do types come from?</header>
-        
+                    <p><i>Types come from classes"</i>. To understand this we need to talk a bit about objects and classes in the Python class hierarchy.</p>
+
+                    <h3>(a) Python class hierarchy</h3>
+                    <p>Although Python does not impose OOP (Object-Oriented Programming) on programmers still "everything in Python is an object!" and this is a statement that you should scratch a little to develop a better understanding of how things work.</p>
+                    <p><strong>What is an object?</strong></p>
+                    <p>For those not familiar with OOP it's enough to say that an object in OOP is a specific form of data structure that possesses properties and methods.</p>
+                    <ul>
+                        <li><i>Properties</i> are variables (values) relevant to the state of the object</li>
+                        <li><i>Methods</i> are routines (algorithms); when executed they have an effect upon and change the properties of the object</li>
+                        <li><i>A metaphor</i>: imagine the object as a moving car. Its speed is a property of the car and it has some value at any specific moment. Stepping on the gas or pressing the brake are methods of the car that help the driver changing the speed.</li>
+                    </ul>
+                    <p><strong>And what is a class?</strong></p>
+                    <ul>
+                        <li>A <strong>class</strong> in OOP is a proper description of the properties and methods of a category (a class) of objects. Thus a class is like an object pattern describing the architecture of the objects to be constructed.</li>
+                        <li>Each class includes a specific 'constructor' method which is executed when the programmer decides that an object of this class is needed.</li>
+                        <ul>
+                            <li>The <i>metaphor</i> continued: if a car is an object then the class is the design pattern of all cars of the same category (type). The constructor is the entire sequence of actions required so that the factory constructs a car object out of the class design pattern.</li>
+                            <p><img src="http://pytolearn.csd.auth.gr/p0-py/00/classcar.png" alt="Python OO"></p>
+                        </ul>
+                    </ul>
+                    <p><strong>Classes and objects in Python</strong></p>
+                    <ul>
+                        <li>Each time an assignment command is executed a new object is constructed in memory. To construct this object the constructor of the appropriate class is enacted while executing the code.</li>
+                        <li>Thus, when we write <strong>x = 1</strong> the constructor of integer class is enacted and constructs an object somewhere in memory whith value '1' and methods inherited from the integer class.</li>
+                        <li>Generalizing: whatever we write on the right part of an assignment activates a constructor and constructs an object somewhere in memory.</li>
+                    </ul>
+                    <code> 
+                        x = 5                        # constructs an integer
+                            k = int(10)                  # an alternative way to construct an integer; int() is integer class constructor
+                            y = 7.5                      # constructs a float
+                            z = random.randint(1,10)     # constructs randomly an integer in [1,10]
+                            a = Alpha()                  # constructs an object of the class 'Alpha'
+                    </code>
+                    <p><strong>Class hierarchy</strong></p>
+                    <ul>
+                        <li>Python coding is based on a <strong>hierarchy of classes</strong> that produce the various data types available to programmers.</li>
+                        <li>Typically all Python classes are considered as subclasses of a base class called <strong>'object'</strong> as the graph below depicts.</li>
+                        <li>With each class you write you actually enrich and extend this hierarchy but this is an issue to be discussed in the OOP section.</li>
+                    </ul>
+                    <p><img src="http://pytolearn.csd.auth.gr/p0-py/00/classhier.png" alt="class hierarchy"></p>
+
+                    <h3>type(), id(), dir()</h3>
+                    <p>Let's get more practical now and see three very helpful methods to identify classes and objects</p>
+                    <p><strong>Use type() to get the type (class) of an object</strong></p>
+                    <code>
+                            x = 1 
+                            y = 15.7
+                            z = 'spam'
+                            print(type(x), type(y), type(z))
+                    </code>
+                    <p>Output: &lt;class 'int'&gt; &lt;lass 'float'&gt; &lt;class 'str'&gt;</class></p>
+
+                    <h3>Use id() to get the unique integer identifier of an object</h3>
+                    <p>In CPython this integer is the memory adress of the object</p>
+                    <code>
+                            x = 1 
+                            y = 15.7
+                            z = 'spam'
+                            print(id(x), id(y), id(z))
+                    </code>
+                    <p>Output: 1651830544 56813968 68799152</p>
                 </section>
         
-                <section class="main-section" id="data_types_numerics">
-                    <header>Data Types: Numerics</header>
+
+
         
-                </section>
-        
-                <section class="main-section" id="data_types_strings">
-                    <header>Data Types: Strings</header>
-        
-                </section>
-        
-                <section class="main-section" id="data_tupes_modules">
-                    <header>Data Types: 'random' and 'math' modules</header>
-                </section>
-        
-                <section class="main-section" id="data_types_booleans">
-                    <header>Data Types: Booleans</header>
-        
-                </section>
-        
-                <section class="main-section" id="i_o_commands_print">
-                    <header>I/O Commands: Print</header>
-        
-                </section>
-        
-                <section class="main-section" id="i_o_commands_input">
-                    <header>I/O Commands: Input</header>
-        
-                </section>
-        
-                <section class="main-section" id="flow_control_while">
-                    <header>Flow Control: 'While' loop</header>
-        
-                </section>
-        
-                <section class="main-section" id="flow_control_if">
-                    <header>Flow Control: 'If' control</header>
-        
-                </section>
-        
-                <section class="main-section" id="flow_control_for">
-                    <header>Flow Control: 'for' loop</header>
-        
+                <section class="main-section" id="reference">
+                    <header>Reference</header>
+                    <p><a href="http://pytolearn.csd.auth.gr/contents.html" rel="_blank">PyToLearn</a></p>
                 </section>
             </main>
     </div><!-- end of container-->
