@@ -14,9 +14,10 @@ html,body {
 }
 
 section {
+    position: relative;
     background-color: #FDFDFD;
     padding: 20px;
-    margin: 10px 0;
+    margin: 20px 0;
 }
 section img {
     width: 100%;
@@ -34,6 +35,32 @@ section ul {
 }
 section ul li{
     margin: 7px 0px;
+}
+
+/*Buttom arrow button using css effects*/
+#go-up {
+    display: inline-block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    right: 50%;
+    bottom: -23px;
+    transform: rotate(45deg);
+    border-color: #98A1A1 transparent transparent #98A1A1;
+    border-width: 27px;
+    border-style: solid;
+    border-radius: 7px;
+}
+a#go-up:after {
+    display: inline-block;
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 30px;
+    background-color: #98a1a1;
+    transform: rotate(-45deg);
+    left: -7px;
+    bottom: -16px;
 }
 
 
@@ -76,7 +103,7 @@ main#main-doc{
 code{
     display:block;
     text-align: left;
-    white-space: pre;
+    white-space: pre-wrap;
     word-break: normal;
     word-wrap: normal;
     line-height: 1.4;
@@ -107,5 +134,8 @@ code{
         border-right: solid;
         border-color: rgba(0,22,22,0.4);
         background-color: #fdfdfd;
+    }
+    #go-up {
+        display: none;
     }
 }
