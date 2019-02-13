@@ -34,11 +34,11 @@ import * as capitalize_strings from "capitalize_strings";
  * Challenge: The following function should be the fallback value for the module. Please add the necessary code to do so.
  */
 "use strict";
-export default function subtract(x,y) {return x - y;}
+export default function subtract(x, y) { return x - y; }
 
 /**Import a Default Export.
  * Challenge: In the following code, please import the default export, subtract, from the file "math_functions", found in the same directory as this file.
  */
 "use strict";
 import subtract from "math_functions";
-subtract(7,4);
+subtract(7, 4);
