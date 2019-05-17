@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cat Photo Application</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
+    <style>
+    .red-text {
+        color: red;
+    }
+
+    h2 {
+        font-family: Lobster, Monospace;
+    }
+
+    p {
+        font-size: 16px;
+        font-family: Monospace;
+    }
+
+    .thick-green-border {
+        border-color: green;
+        border-width: 10px;
+        border-style: solid;
+        border-radius: 50%;
+    }
+
+    .smaller-image {
+        width: 100px;
+    }
+    </style>
+</head>
+<body>
+        <div class="container-fluid"> 
+                <h2 class="red-text text-center">CatPhotoApp</h2>
+                
+                <p>Click here for <a href="#">cat photos</a>.</p>
+                
+                <a href="#"><img class="smaller-image thick-green-border" src="https://bit.ly/fcc-relaxing-cat" alt="A cute orange cat lying on its back."></a>
+
+                <!-- Responsive image-->
+                <a href="#">  <img class="img-responsive" src="https://bit.ly/fcc-running-cats" alt="A cute orange cat lying on its back."></a>
+                
+                <!-- Button primary class-->
+                <button class="btn btn-primary btn-block">Like</button>
+                
+                <!-- btn-info class-->
+                <button class="btn btn-info btn-block">Info</button>
+                
+                <p>Things cats love:</p>
+                <ul>
+                  <li>cat nip</li>
+                  <li>laser pointers</li>
+                  <li>lasagna</li>
+                </ul>
+                <p>Top 3 things cats hate:</p>
+                <ol>
+                  <li>flea treatment</li>
+                  <li>thunder</li>
+                  <li>other cats</li>
+                </ol>
+                <form action="/submit-cat-photo">
+                  <label><input type="radio" name="indoor-outdoor"> Indoor</label>
+                  <label><input type="radio" name="indoor-outdoor"> Outdoor</label>
+                  <label><input type="checkbox" name="personality"> Loving</label>
+                  <label><input type="checkbox" name="personality"> Lazy</label>
+                  <label><input type="checkbox" name="personality"> Crazy</label>
+                  <input type="text" placeholder="cat photo URL" required>
+                  <button type="submit">Submit</button>
+                </form>
+                </div>
+
+                <!-- Boostrap-->
+                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
