@@ -1,0 +1,11 @@
+https://api.jquery.com/animate/ 
+https://api.jquery.com/addClass/
+https://api.jquery.com/removeClass
+https://api.jquery.com/css
+https://api.jquery.com/prop/
+https://api.jquery.com/html/
+https://api.jquery.com/remove/
+https://api.jquery.com/appendTo
+https://api.jquery.com/clone/ 
+https://api.jquery.com/parent/
+https://api.jquery.com/children/
