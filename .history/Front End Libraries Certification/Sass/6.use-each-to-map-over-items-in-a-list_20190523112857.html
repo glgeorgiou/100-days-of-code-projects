@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sass</title>
+
+    <!-- 
+        https://sass-guidelin.es/#loops
+        @each $key, $color in $colors {
+            .#{$color}-text {color: $color;}
+        }
+        Challenge: Write an @each directive that goes through a list: blue, black, red and assigns each variable to a .color-bg class, where the "color" part changes for each item.
+        Each class should set the background-color the respective color.
+    -->
+    <style type='text/sass'>
+        @each $color in blue, black, red {
+            .#{$color}-bg {background-color: $color;}
+        }
+    
+        div {
+            height: 200px;
+            width: 200px;
+        }
+      </style>
+
+</head>
+<body>
+        <div class="blue-bg"></div>
+        <div class="black-bg"></div>
+        <div class="red-bg"></div>
+</body>
+</html>
