@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>React - Use Default Props</title>
+
+</head>
+<body>
+    
+
+    <!-- Load React. -->
+    <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <div id="challenge-node"></div>
+
+    <!-- 
+        Define default component's properties: MyComponent.defaultProps = { property: 'value' }
+    -->
+    <script type="text/babel">
+        const ShoppingCart = (props) => {
+            return (
+                <div>
+                <h1>Shopping Cart Component: {props.items}</h1>
+                </div>
+            )
+        };
+        // change code below this line
+        ShoppingCart.defaultProps = {items: 0}
+
+      ReactDOM.render(<ShoppingCart />,document.getElementById('challenge-node'));
+    </script>
+</body>
+</html>
