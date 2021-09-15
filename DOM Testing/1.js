@@ -5,7 +5,8 @@
  * */
 document.getElementById('btn').addEventListener("click",colorize);
 
- function colorize() {
+ function colorize(e) {
+	 e.preventDefault();
      //First paragraph - id
      testId = document.getElementById('test');
      testId.style.backgroundColor = 'red'
