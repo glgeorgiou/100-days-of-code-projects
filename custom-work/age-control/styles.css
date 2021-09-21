@@ -23,7 +23,7 @@ body {
     border: 1px solid #D6D9DC;
     border-radius: 7px;
     
-    width: 50%;
+    width: 80%;
     margin: 40px 0;
     padding: 50px;
 }
@@ -33,6 +33,7 @@ body {
 }
 .header-form p {
     font-style: italic;
+    font-size: 14px;
     letter-spacing: 2px;
 }
 
@@ -42,13 +43,14 @@ body {
 .age-control-form {
     background-color: #F6F7F8;
     border: 1px solid #D6D9DC;
-    width: 50%;
+    width: 80%;
     border-radius: 7px;
     padding: 50px;
 }
 .form-row {
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     flex-wrap: wrap;
     margin-bottom: 1.5em;
 }
@@ -76,4 +78,42 @@ body {
 }
 .form-row button:hover{
     background-color:mediumseagreen;
+}
+#output {
+    background-color: #eaeaea;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+
+/*Media queries*/
+@media (min-width: 400px) {
+
+    .age-control-form, .header-form {
+        max-width: 600px;
+    }
+    .header-form p {
+        font-size: 16px
+    }
+    .form-row {
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-around;
+        float:left;
+        margin-right: 30px;
+    }
+    .form-row input[type='number'], .form-row input[type='text'] {
+        width: 60%;
+    }
+    
+    .form-row:nth-child(4), .form-row:nth-child(5) {
+        clear: both;
+    }
+    .form-row:nth-child(5) {
+        float: none;
+    }
+    .form-row button {
+        width: 60%;
+    }
 }
