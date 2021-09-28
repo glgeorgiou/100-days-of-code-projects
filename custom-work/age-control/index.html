@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="check-age.js" defer></script>
     <title>Age Control</title>
+    <script src="check-age.js" defer></script>
 </head>
 
 <body>
@@ -16,8 +16,8 @@
         <p>Please enter your age</p>
     </header>
     
-    
     <form action="" method="GET" class="age-control-form">
+        <!-- NOTE: Select option instead of input -->
         <div class="form-row">
             <label for="mera">Day</label>
             <input type="number" name="mera" id="mera" min="1" max="31">    
@@ -39,7 +39,7 @@
         </div>
         
         <div class="form-row">
-            <button>Validate</button>
+            <button id="btnValidate">Validate</button>
         </div>
     </form>
     
