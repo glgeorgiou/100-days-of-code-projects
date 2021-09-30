@@ -17,7 +17,7 @@ function validate(evt) {
     //Temporary evt
     evt.preventDefault();
 
-    //Take the values
+    //Take the values: BUG: CANNOT READ VALUE FROM SELECT
     let mera = document.querySelector("#mera").value
     let minas = document.querySelector("#minas").value
     let etos = document.querySelector("#etos").value
