@@ -17,22 +17,27 @@ function validate(evt) {
     //Temporary evt
     evt.preventDefault();
 
-    //Take the values: BUG: CANNOT READ VALUE FROM SELECT
-    let mera = document.querySelector("#mera").value
-    let minas = document.querySelector("#minas").value
-    let etos = document.querySelector("#etos").value
+    //Take the values
+    let mera = document.querySelector("#mera").selectedIndex;
+    let minas = document.querySelector("#minas").selectedIndex;
+    let etos = document.querySelector("#etos");
+    let etosValue = etos.options[etos.selectedIndex].text;
+    let showAge = document.querySelector("#output");
 
-    //Check the age
-    let date = etos+"-"+minas+"-"+mera;
+    //Check the age - DEBUG THE BELOW IFs
+    if (mera.selectedIndex===0) {mera='-';}
+    if (minas.selectedIndex===0) {minas='-';}
+
+    let date = etosValue+"-"+minas+"-"+mera;
     let age = calculateAge(date);
 
-    if (age=='NaN') {
-        mera.value=="";
-        minas.value=="";
-        etos.value=="";
-        console.log('Not a valid age'+age);
-    }
-    console.log('Your age is '+age);
-    
-//    console.log("Day = "+mera+", Month="+minas+", Year = "+etos)
+    // if (age=='NaN') {
+    //     mera.value=="";
+    //     minas.value=="";
+    //     etos.value=="";
+    //     console.log('Not a valid age'+age);
+    // }
+
+    console.log('The date is: '+date+' - Your age is '+age+'.');
+    showAge.value = age;
 }
