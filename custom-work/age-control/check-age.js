@@ -14,7 +14,7 @@ function calculateAge(dob) {
   @Parameter: event */
 function validate(evt) {
 
-    //Temporary evt
+    //Is needed
     evt.preventDefault();
 
     //Take the values
@@ -23,21 +23,19 @@ function validate(evt) {
     let etos = document.querySelector("#etos");
     let etosValue = etos.options[etos.selectedIndex].text;
     let showAge = document.querySelector("#output");
+    let age='';   
 
-    //Check the age - DEBUG THE BELOW IFs
-    if (mera.selectedIndex===0) {mera='-';}
-    if (minas.selectedIndex===0) {minas='-';}
+    date = etosValue+"-"+minas+"-"+mera;
 
-    let date = etosValue+"-"+minas+"-"+mera;
-    let age = calculateAge(date);
+    //Calculate and show age
+    age = calculateAge(date);
 
-    // if (age=='NaN') {
-    //     mera.value=="";
-    //     minas.value=="";
-    //     etos.value=="";
-    //     console.log('Not a valid age'+age);
-    // }
+    if (age != 'NaN') {
+      showAge.value = age;
+    } else {
+      showAge.value = 'Sorry, invalid age';
+    }
 
+    //TMP
     console.log('The date is: '+date+' - Your age is '+age+'.');
-    showAge.value = age;
 }

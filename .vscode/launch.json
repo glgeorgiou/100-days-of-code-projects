@@ -5,10 +5,10 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "node",
+            "name": "Launch check age.js",
+            "type": "pwa-node",
             "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceFolder}\\Javascript Algorithms And Data Structures Certification\\10.JavaScript-Algorithms-and-DataStructures Projects\\roman-numeral-converter.js"
+            "program": "${workspaceFolder}\\check-age.js"
         }
     ]
 }
