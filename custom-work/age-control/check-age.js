@@ -17,19 +17,27 @@ function validate(evt) {
     let nMera = mera.value;
     let nMinas = minas.value;
     let nEtos = Number(etos.value);
-    let age='', ageTmp = '';   
+    let age='', numEtos = '';   
 
-    
     //Calculate age
     etosTmp = new Date()
     numEtos = Number(etosTmp.getFullYear())
     age =  numEtos-nEtos;
 
     //Check age
-  if (age <= 21) {
-    showAge.value = 'Sorry, you \'re less than 21.'
-  } else {
-    showAge.value = age;
-  }
-    //NOTE: change color and text of the button in any case
+    if (nMera =='0' || nMinas=='0' || nEtos==0) {
+      btnValidate.innerText = 'Invalid values. Try again'
+      btnValidate.removeAttribute("style");
+      showAge.value = '';
+    } else {
+      if (age <= 21) {
+        btnValidate.innerText = 'Sorry, you \'re less than 21.'
+        showAge.value = age;
+        btnValidate.setAttribute("style","background-color: red")
+      } else {
+        showAge.value = age;
+        btnValidate.innerText = 'Acceptable age'
+        btnValidate.setAttribute("style","background-color: green")
+      }
+    }
 }
