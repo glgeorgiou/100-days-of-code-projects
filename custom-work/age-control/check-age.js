@@ -1,5 +1,32 @@
+/**
+ * Declarations
+ */
 let btnValidate = document.querySelector("#btnValidate");
-btnValidate.addEventListener("click",validate)
+let mera = document.querySelector("#mera");
+let minas = document.querySelector("#minas");
+let etos = document.querySelector("#etos");
+let showAge = document.querySelector("#output");
+
+btnValidate.addEventListener("click",validate);
+mera.addEventListener('change',dayValidation);
+minas.addEventListener('change',monthValiation);
+etos.addEventListener('change',yearValidation);
+
+function dayValidation(evt) {
+  console.log('The day is '+evt.target.value+', and is type of '+typeof Number(evt.target.value));
+}
+
+function monthValiation(evt) {
+  console.log('The month is '+evt.target.value+', and is type of '+typeof Number(evt.target.value));
+}
+
+function yearValidation(evt) {
+  console.log('The year is '+evt.target.value+', and is type of '+typeof Number(evt.target.value));
+  /**
+   * pinax = [1924,1928,...,2000,2004,2008,2012,2016,2020]
+   * pinax.includes(2008)
+   */
+}
 
 
   /*Validate function.
@@ -10,10 +37,6 @@ function validate(evt) {
     evt.preventDefault();
 
     //Take the values
-    let mera = document.querySelector("#mera");
-    let minas = document.querySelector("#minas");
-    let etos = document.querySelector("#etos");
-    let showAge = document.querySelector("#output");
     let nMera = mera.value;
     let nMinas = minas.value;
     let nEtos = Number(etos.value);
@@ -47,10 +70,3 @@ function validate(evt) {
       }
     }
 }
-
-/**
- * TEMP
- * mera.addEventListener('change', (evt) => {
-console.log('The day is '+evt.target.value+', and is type of '+typeof Number(evt.target.value));
-});
- */
