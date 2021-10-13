@@ -6,6 +6,9 @@ let mera = document.querySelector("#mera");
 let minas = document.querySelector("#minas");
 let etos = document.querySelector("#etos");
 let showAge = document.querySelector("#output");
+let yFlag //Dis year flag;
+let mdFlag //month day flag
+
 
 btnValidate.addEventListener("click",validate);
 mera.addEventListener('change',dayValidation);
@@ -20,13 +23,25 @@ function monthValiation(evt) {
   console.log('The month is '+evt.target.value+', and is type of '+typeof Number(evt.target.value));
 }
 
+/**
+ * Validates if a year is dis or not
+ * @param {*} evt 
+ */
 function yearValidation(evt) {
-  console.log('The year is '+evt.target.value+', and is type of '+typeof Number(evt.target.value));
-  /**
-   * pinax = [1924,1928,...,2000,2004,2008,2012,2016,2020]
-   * pinax.includes(2008)
-   */
+  let pinax = [];
+
+  for (let i = 0, fEtos=1924; i <=22; i++, fEtos+=4) {
+    pinax[i]=fEtos;
+  }
+  
+  if (pinax.includes(Number(evt.target.value))) {
+      yFlag=1;  
+    } else {
+      yFlag=0;  
+  }
+    console.log(yFlag);
 }
+
 
 
   /*Validate function.
@@ -56,7 +71,7 @@ function validate(evt) {
       if (age <= 21) {
         /**
          * More validatations:
-         * 1. dis year
+         * 1. dis year OK
          * 2. valid end date accordng to month
          * 3. compare also month and date in age in order to control < 21 years old
          */
