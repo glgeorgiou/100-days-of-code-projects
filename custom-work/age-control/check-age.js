@@ -7,21 +7,25 @@ let minas = document.querySelector("#minas");
 let etos = document.querySelector("#etos");
 let showAge = document.querySelector("#output");
 let yFlag //Dis year flag;
-let mdFlag //month day flag
+let mFlag //month flag
+let dFlag //day flag
 
 
 btnValidate.addEventListener("click",validate);
-mera.addEventListener('change',dayValidation);
-minas.addEventListener('change',monthValiation);
 etos.addEventListener('change',yearValidation);
 
-function dayValidation(evt) {
-  console.log('The day is '+evt.target.value+', and is type of '+typeof Number(evt.target.value));
-}
+//NOTE: Perhaps is better to call a single function inside the Validate function that uses mFlag and dFlag.
+// mera.addEventListener('change',dayValidation);
+// minas.addEventListener('change',monthValiation);
 
-function monthValiation(evt) {
-  console.log('The month is '+evt.target.value+', and is type of '+typeof Number(evt.target.value));
-}
+
+// function dayValidation(evt) {
+//   console.log('The day is '+evt.target.value+', and is type of '+typeof Number(evt.target.value));
+// }
+
+// function monthValiation(evt) {
+//   console.log('The month is '+evt.target.value+', and is type of '+typeof Number(evt.target.value));
+// }
 
 /**
  * Validates if a year is dis or not
