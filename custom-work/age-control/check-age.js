@@ -14,18 +14,6 @@ let dFlag //day flag
 btnValidate.addEventListener("click",validate);
 etos.addEventListener('change',yearValidation);
 
-//NOTE: Perhaps is better to call a single function inside the Validate function that uses mFlag and dFlag.
-// mera.addEventListener('change',dayValidation);
-// minas.addEventListener('change',monthValiation);
-
-
-// function dayValidation(evt) {
-//   console.log('The day is '+evt.target.value+', and is type of '+typeof Number(evt.target.value));
-// }
-
-// function monthValiation(evt) {
-//   console.log('The month is '+evt.target.value+', and is type of '+typeof Number(evt.target.value));
-// }
 
 /**
  * Validates if a year is dis or not
@@ -43,7 +31,6 @@ function yearValidation(evt) {
     } else {
       yFlag=0;  
   }
-    console.log(yFlag);
 }
 
 
@@ -51,6 +38,8 @@ function yearValidation(evt) {
   /*Validate function.
   @Parameter: event */
 function validate(evt) {
+  let oddMonthDays = [1,3,5,7,8,10,12];
+  let outputMessage='';
 
     //Is needed
     evt.preventDefault();
@@ -68,17 +57,12 @@ function validate(evt) {
 
     //Check age
     if (nMera =='0' || nMinas=='0' || nEtos==0) {
-      btnValidate.innerText = 'One or more zero values. Try again'
+      outputMessage = 'One or more zero values. Try again'
+      btnValidate.innerText = outputMessage;
       btnValidate.removeAttribute("style");
       showAge.value = '';
     } else {
       if (age <= 21) {
-        /**
-         * More validatations:
-         * 1. dis year OK
-         * 2. valid end date accordng to month
-         * 3. compare also month and date in age in order to control < 21 years old
-         */
         btnValidate.innerText = 'Sorry, you \'re less than 21.'
         showAge.value = age;
         btnValidate.setAttribute("style","background-color: red")
@@ -86,6 +70,31 @@ function validate(evt) {
         showAge.value = age;
         btnValidate.innerText = 'Acceptable age'
         btnValidate.setAttribute("style","background-color: green")
+      }
+    }
+    
+    //Check Months and Days combination if is right or not
+    if ( oddMonthDays.includes((Number(nMinas))) ) {
+      mFlag=1;
+    } else {
+      mFlag=0;
+    }
+    
+    if ( Number(nMera==31)) {dFlag=1;} else {dFlag=0;} //Is is usefull?
+    
+    if ( (!mFlag && nMera==31) || (nMera==29 && !yFlag) || (nMera<=28 && nMinas)) {
+    }
+    
+    if (nMinas==2) {
+      if (nMera>28 && !yFlag) {
+        outputMessage += 'Wrong combination 1. Try again';
+        btnValidate.setAttribute("style","background-color: red")
+        btnValidate.innerText = outputMessage;
+      }
+      if (nMera>29 && yFlag) {
+        outputMessage += 'Wrong combination 2. Try again';
+        btnValidate.setAttribute("style","background-color: red")
+        btnValidate.innerText = outputMessage;
       }
     }
 }
