@@ -1,0 +1,21 @@
+body {
+    margin: 0;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.container header, .container nav, .container aside, .container section, .container footer {
+    box-sizing: border-box;
+    min-height: 150px;
+    min-width: 150px;
+}
+
+header {background-color: #003476;}
+nav {background-color: #0062dc;}
+aside {background-color: #b4d2f7;}
+section {background-color: #b6cbee;}
+footer {background-color: #dfe1e5;}
