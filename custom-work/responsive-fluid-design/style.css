@@ -12,17 +12,19 @@ body {
     width: 100%;
 }
 
-header {background-color: #003476;}
-nav {background-color: #0062dc;}
-aside {background-color: #b4d2f7;}
-section {background-color: #b6cbee;}
-footer {background-color: #dfe1e5;}
+header, nav, aside, section, footer {background-color: #F8F9FA;}
 
 header, nav, aside, section, footer {
-    color: white;
+    color: black;
     min-height: 150px;
     min-width: 150px;
     width: 100%;
+    padding: 4px;
+}
+
+header img {
+    width: 100%;
+    height: auto;
 }
 
 
